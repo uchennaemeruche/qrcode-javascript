@@ -18,6 +18,10 @@ const toggleLoader = (visible = false) =>{
 
 clearForm = () =>{
     qrdiv.innerHTML = ''
+
+    const saveLink = document.getElementById('save-link')
+    if(saveLink)
+        saveLink.remove()
 }
 
 const createSaveButton = (url) =>{
@@ -49,7 +53,7 @@ form.addEventListener('submit', (e) =>{
 
    setTimeout(() =>{
     toggleLoader(false)
-    
+
     generateQRCOde(url, size)
 
     setTimeout(() =>{
